@@ -4,21 +4,38 @@
 void	print_export(char **dup, t_data *data)
 {
 	int		i;
-	char	**dupdup;
-
+	char	**dupdup = NULL ;
 	i = -1;
 	while (dup[++i])
 	{
 		dupdup = ft_nsplit(dup[i], '=', 2, data);
-		printf("declare -x %s=\"%s\"\n", dupdup[0], dupdup[1]);
+		if (!dupdup)
+			printf("declare -x %s\n", dup[i]);
+		else
+			printf("declare -x %s=\"%s\"\n", dupdup[0], dupdup[1]);
 		free_strs(dupdup, data);
 	}
 }
 
+/*gha zedtha*/
+// void	print_export_if_no_value(char **dup, t_data *data)
+// {
+// 	int i;
+// 	char **dupdup = NULL;
+// 	i = -1;
+// 	while(dup[++i])
+// 	{
+// 		//dupdup = ft_nsplit(dup[i], '=', 2, data);
+// 		printf("declare -x %s=\'\'\n", dupdup[0]);
+
+// 		free_strs(dupdup, data);
+// 	}
+// }
+
 void	sort_export(t_data *data)
 {
 	char	**dup;
-	char	*tmp;
+	char	*tmp; 
 	int		i;
 	int		j;
 

@@ -6,7 +6,7 @@
 /*   By: omazoz <omazoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 16:17:58 by omazoz            #+#    #+#             */
-/*   Updated: 2022/06/06 16:18:00 by omazoz           ###   ########.fr       */
+/*   Updated: 2022/06/09 17:26:19 by omazoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #ifndef UTILS_H
 # define UTILS_H
 
+void	print_export_if_no_value(char **dup, t_data *data);
+int 	search(char *s, char c);
 int		ft_open(char *filename, int flags, int mod, t_data *data);
 void	sig_reset(void);
 void	sig_fork(int sig);

@@ -6,7 +6,7 @@
 /*   By: omazoz <omazoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 14:44:39 by omazoz            #+#    #+#             */
-/*   Updated: 2022/06/06 14:44:42 by omazoz           ###   ########.fr       */
+/*   Updated: 2022/06/09 17:25:47 by omazoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,18 @@ static size_t	mine_substr(char const *s, size_t i, char *strs, char c)
 	strs[j] = '\0';
 	return (i);
 }
+int 	search(char *s, char c)
+{
+	int i;
 
+	i  = -1;
+	while (s[++i])
+	{
+		if (s[i] == c)
+			return (0);
+	}
+	return (1);
+}
 char	**ft_nsplit(char *s, char c, int n, t_data *data)
 {
 	char	**strs;
@@ -57,6 +68,8 @@ char	**ft_nsplit(char *s, char c, int n, t_data *data)
 	j = 0;
 	strs = ft_malloc(sizeof(char *) * (n + 1), data);
 	if (!s)
+		return (NULL);
+	if (search(s, c) == 1)
 		return (NULL);
 	while (j < n)
 	{

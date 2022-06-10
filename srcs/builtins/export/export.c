@@ -38,8 +38,8 @@ int	export_cmd(char **args, t_data *data)
 	{
 		if (args[i] && !check_export_arg(args[i], &error))
 		{
-			if (!check_value(args[i]))
-				continue ;
+			// if (!check_value(args[i]))
+			// 	continue ;
 			if (!data->env)
 			{
 				no_env(args, i, data);

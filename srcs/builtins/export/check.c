@@ -36,12 +36,12 @@ int	check_export_arg(char *arg, int *err)
 		(*err) = 1;
 		return (error("export", arg, "not a valid identifier"), 1);
 	}
-	while (arg[i] && arg[i] != '=')
+	while (arg[i])
 	{
-		if (!ft_isalpha(arg[i]) && !ft_isdigit(arg[i]) && arg[i] != '='
+		if (!ft_isalpha(arg[i]) && !ft_isdigit(arg[i])
 			&& arg[i] != '_')
 		{
-			if (arg[i + 1] && arg[i] == '+' && arg[i + 1] == '=')
+			if (arg[i + 1] && arg[i] == '+')
 				return (0);
 			(*err) = 1;
 			return (error("export", arg, "not a valid identifier"), 1);

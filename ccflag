@@ -1,4 +1,0 @@
-Fodé O'Brien Oularé
-FLAGS := -Wall -Wextra -Werror
-LFLAGS := -L/goinfre/omazoz/.brew/opt/readline/lib
-IFLAGS := -I/goinfre/omazoz/.brew/opt/readline/include

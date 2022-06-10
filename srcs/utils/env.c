@@ -6,7 +6,7 @@
 /*   By: omazoz <omazoz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 14:53:27 by omazoz            #+#    #+#             */
-/*   Updated: 2022/06/06 14:53:28 by omazoz           ###   ########.fr       */
+/*   Updated: 2022/06/09 17:29:01 by omazoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,9 @@ char	**dup_env(t_env *env, t_data *data)
 	while (env)
 	{
 		tmp2 = ft_strdup(env->var[0], data);
-		tmp = ft_strjoin_char(tmp2, '=', data);
+		if(!search(tmp2, '='))
+			tmp = ft_strjoin_char(tmp2, '=', data);
+		tmp = tmp2;
 		if (env->var[1])
 			tmp = ft_strjoin(tmp, env->var[1], data);
 		dest[i] = tmp;
